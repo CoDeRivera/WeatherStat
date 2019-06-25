@@ -66,3 +66,8 @@ body {
   font-size: 18px;
   text-align: left;
 }
+
+.footer {
+  text-align: center;
+  padding: 20% 0;
+}

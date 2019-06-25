@@ -15,10 +15,14 @@ export default class App extends React.Component {
 
   handleOnSubmit(e) {
     e.preventDefault();
-    this.setState({
-      userZipCode: e.target.elements.zipCode.value
-    });
-    e.target.elements.zipCode.value = "";
+    if (e.target.elements.zipCode.value != "") {
+      this.setState({
+        userZipCode: e.target.elements.zipCode.value
+      });
+      e.target.elements.zipCode.value = "";
+    } else {
+      alert("Enter a zip code");
+    }
   }
 
   render() {
@@ -30,6 +34,9 @@ export default class App extends React.Component {
         <hr />
         <WeatherForecast userZipCode={this.state.userZipCode} />
         <hr />
+        <footer className="footer">
+          <h1>SHaDoWCoDe64 &copy;</h1>
+        </footer>
       </>
     );
   }
